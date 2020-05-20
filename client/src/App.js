@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Router, Link} from "@reach/router";
-import axios from "axios";
+// import axios from "axios";
 import Form from './components/Form';
+import Product from './components/Products';
 
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
         </li>
       </ul>
         <Router>
-
-         <Form path="/new" />
+          <Product path="/" /> 
+          <Form path="/new" />
         </Router>
       </div>
     </div>

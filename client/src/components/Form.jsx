@@ -1,4 +1,3 @@
-  
 import React, { useState } from "react";
 import axios from "axios";
 import { navigate } from "@reach/router";
@@ -20,6 +19,9 @@ const Form = (props) => {
         console.log(res);
         if (res.data.errors) {
           setErrors(res.data.errors);
+        }
+        else {
+          navigate("/")
         }
       })
       .catch(err => console.log(err));
