@@ -28,3 +28,8 @@ code {
 #edit > h4:hover{
   cursor: pointer;
 }
+
+#getOne:hover{
+  cursor: pointer;
+  color: goldenrod;
+}

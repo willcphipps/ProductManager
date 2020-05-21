@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Router } from "@reach/router";
+import { Link } from "@reach/router";
 import axios from 'axios';
 
 
@@ -47,7 +47,6 @@ const Products = (props) => {
     console.log("the war ofstars",id);
     e.preventDefault()
     let Product = { product, price, description };
-    console.log("in the edit",Product, id);
     axios.put(`http://localhost:8000/api/products/${id}`, Product)
      .then(res => {
         console.log(res);
@@ -61,6 +60,10 @@ const Products = (props) => {
       })
       .catch(err => console.log(err));
   }
+  //   const getOneProduct = (e, id) => {
+  //   e.preventDefault();
+  //   navigate(`/one/${id}`)
+  // }
   
   useEffect(() => {
     getProducts();
@@ -68,7 +71,7 @@ const Products = (props) => {
 
   return (
     <div>
-     <h3 className="p-4 my-5 mx-3 text-center bg-secondary">Product Manager</h3> 
+     <h3 className="p-4 my-5 mx-3 m-0-sm text-center bg-secondary">Product Manager</h3> 
       <div className="d-flex flex-row justify-content-center">
         
         <table className="table table-striped table-responsive col-8">
@@ -84,7 +87,8 @@ const Products = (props) => {
             {products.map(product => 
                 
               <tr key = {product._id}>
-                  <td> { product.product } </td> 
+                <td><Link to= {product._id}  >
+                    { product.product }</Link></td> 
                   <td>{ product.price }</td>
                   <td>{product.description}</td>
                   <td>
