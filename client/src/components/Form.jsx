@@ -28,7 +28,7 @@ const Form = (props) => {
   }
   return (
     <div>
-      <h3 className="p-4 my-5 mx-2 text-center bg-secondary">Add New Product</h3> 
+      <h3 className="p-4 my-5 mx-3 text-center bg-secondary">Add New Product</h3> 
       <div className="d-flex justify-content-center">
         <form onSubmit={ (e) => addProduct(e) } className="form-group col-3">
           <input className="m-2 form-control" type="text"  onChange = {(e)=>setProduct(e.target.value)}/>

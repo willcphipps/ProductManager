@@ -13,14 +13,14 @@ module.exports.createProduct = (req, res) => {
     .catch(err => res.json( err ));
 };
 
-module.exports.returnOneProduct = (req, res) => {
-	Product.findOne({ _id: req.params._id })
-		.then(oneProduct => res.json({ product: oneProduct }))
-		.catch(err => res.json(err));
-};
+// module.exports.returnOneProduct = (req, res) => {
+// 	Product.findOne({ _id: req.params._id })
+// 		.then(oneProduct => res.json({ product: oneProduct }))
+// 		.catch(err => res.json(err));
+// };
 
 module.exports.updateProduct = (req, res) => {
-  Product.findByIdAndUpdate({ _id: req.params.id }, req.body, {runValidators:true})
+  Product.findByIdAndUpdate({ _id: req.params._id }, req.body, {runValidators:true})
     .then(editProduct => res.json({ product: editProduct }))
     .catch(err => res.json({err }));
 };

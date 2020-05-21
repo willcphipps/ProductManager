@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#edit{
+  /* display: block; */
+  background-color: rgba(4, 3, 5, 0.8);
+  color: white;
+  /* background-color: rgb(66, 63, 63 .8); */
+  height: 400px;
+  width: 500px;
+  position: fixed;
+  top: calc(50vh - 300px);
+  left: calc(50vw - 250px);
+  overflow: scroll;
+  display: none;
+}
+#edit > h4:hover{
+  cursor: pointer;
+}
