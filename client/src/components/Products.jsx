@@ -40,11 +40,11 @@ const Products = (props) => {
   }
 
   const hideEdit = () => {
+
     document.getElementById("edit").style.display = "none";
   }
 
   const editProduct = (e, id) => {
-    console.log("the war ofstars",id);
     e.preventDefault()
     let Product = { product, price, description };
     axios.put(`http://localhost:8000/api/products/${id}`, Product)
@@ -108,9 +108,9 @@ const Products = (props) => {
               <input className="m-2 form-control" value={ product } type="text" onChange={(e) => setProduct(e.target.value) } />
                 {errors.product ? <p className="text-danger">{errors.product.message}</p> : ""}
               <input className="m-2 form-control" value={ price } type="number" onChange={(e) => setPrice(e.target.value) } />
-                {errors.price ? <p className="text-danger">{errors.product.message}</p> : ""}
+                {errors.price ? <p className="text-danger">{errors.price.message}</p> : ""}
               <input className="m-2 form-control" value={description} type="text" onChange={(e) => setDescription(e.target.value) }/>
-                {errors.description ? <p className="text-danger">{errors.product.message} </p> : ""}
+                {errors.description ? <p className="text-danger">{errors.description.message} </p> : ""}
               <button className="m-2"> submit </button>
             </form>
           </div>

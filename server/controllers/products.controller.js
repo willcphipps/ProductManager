@@ -22,7 +22,7 @@ module.exports.returnOneProduct = (req, res) => {
 module.exports.updateProduct = (req, res) => {
   Product.findByIdAndUpdate({ _id: req.params._id }, req.body, {runValidators:true})
     .then(editProduct => res.json({ product: editProduct }))
-    .catch(err => res.json({err }));
+    .catch(err => res.json(err));
 };
 
 module.exports.deleteProduct = (req, res) => {
